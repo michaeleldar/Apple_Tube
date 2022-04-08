@@ -6,8 +6,10 @@ page = urlopen(url)
 html_bytes = page.read()
 html = html_bytes.decode("utf-8")
 inbody = False
+inh1 = False
 intag = False
 body_chars = ""
+h1_chars = ""
 cbody_chars = ""
 body_contents = ""
 for char in html:
