@@ -1,5 +1,6 @@
 from urllib.request import urlopen
 from sys import argv
+import tkinter as tk
 url = argv[1]
 page = urlopen(url)
 html_bytes = page.read()
@@ -8,6 +9,7 @@ inbody = False
 intag = False
 body_chars = ""
 cbody_chars = ""
+body_contents = ""
 for char in html:
     if char == "<":
         intag = True
@@ -21,8 +23,11 @@ for char in html:
             body_chars = ""
     elif inbody:
         if not intag:
-            print(char, end="")
+            body_contents += char
     elif intag:
         body_chars += char
         cbody_chars += char
 
+window = tk.Tk()
+greeting = tk.Label(text=body_contents)
+greeting.pack()
