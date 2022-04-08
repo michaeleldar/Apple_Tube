@@ -10,6 +10,7 @@ inh1 = False
 intag = False
 body_chars = ""
 h1_chars = ""
+ch1_chars = ""
 cbody_chars = ""
 body_contents = ""
 for char in html:
@@ -21,6 +22,10 @@ for char in html:
             inbody = True
         elif cbody_chars == "/body":
             inbody = False
+        elif h1_chars == "h1":
+            inh1 = True
+        elif ch1_chars == "/h1":
+            inh1 = False
         else:
             body_chars = ""
     elif inbody:
