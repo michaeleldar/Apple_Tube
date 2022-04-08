@@ -31,3 +31,4 @@ for char in html:
 window = tk.Tk()
 greeting = tk.Label(text=body_contents)
 greeting.pack()
+window.mainloop()
