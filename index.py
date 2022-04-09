@@ -24,7 +24,7 @@ for char in html:
             inbody = True
         elif cbody_chars == "/body":
             inbody = False
-            
+
         elif h1_chars == "h1":
             inh1 = True
         elif ch1_chars == "/h1":
